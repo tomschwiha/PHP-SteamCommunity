@@ -226,6 +226,12 @@ class SteamCommunity
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_RESOLVE, [sprintf(
+            "%s:%d:%s",
+            "steamcommunity.com",
+            "443",
+            "104.84.187.185"
+        )] );
         if (!empty($this->rootDir)) {
             curl_setopt($ch, CURLOPT_COOKIEFILE, $this->_getCookieFilePath());
             curl_setopt($ch, CURLOPT_COOKIEJAR, $this->_getCookieFilePath());
