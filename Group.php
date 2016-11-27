@@ -13,7 +13,7 @@ use waylaidwanderer\SteamCommunity\Group\History\HistoryItem;
 
 class Group
 {
-    const BASE_URL = "http://steamcommunity.com/gid/";
+    const BASE_URL = "https://steamcommunity.com/gid/";
     private $steamCommunity;
     private $gid;
     private $xml;

@@ -25,7 +25,7 @@ class Market
     public function getRecentCompleted()
     {
         try {
-            $url = "http://steamcommunity.com/market/recentcompleted";
+            $url = "https://steamcommunity.com/market/recentcompleted";
             $response = $this->steamCommunity->cURL($url, 'http://steamcommunity.com/market');
             $json = json_decode($response, true);
             return $json;
@@ -37,7 +37,7 @@ class Market
     public function getPriceOverview($appId, $marketHashName)
     {
         $marketHashName = str_replace('%2F', '%252F', rawurlencode($marketHashName));
-        $url = "http://steamcommunity.com/market/priceoverview/?currency=1&appid={$appId}&market_hash_name={$marketHashName}";
+        $url = "https://steamcommunity.com/market/priceoverview/?currency=1&appid={$appId}&market_hash_name={$marketHashName}";
         try {
             $response = $this->steamCommunity->cURL($url);
             $json = json_decode($response, true);
@@ -54,7 +54,7 @@ class Market
     public function getPriceHistory($appId, $marketHashName)
     {
         $marketHashName = str_replace('%2F', '%252F', rawurlencode($marketHashName));
-        $url = "http://steamcommunity.com/market/pricehistory/?appid={$appId}&market_hash_name={$marketHashName}";
+        $url = "https://steamcommunity.com/market/pricehistory/?appid={$appId}&market_hash_name={$marketHashName}";
         try {
             $response = $this->steamCommunity->cURL($url);
             $json = json_decode($response, true);
@@ -71,7 +71,7 @@ class Market
     public function getListings($appId, $marketHashName)
     {
         $marketHashName = str_replace('%2F', '%252F', rawurlencode($marketHashName));
-        $url = "http://steamcommunity.com/market/listings/{$appId}/{$marketHashName}/render?currency=1";
+        $url = "https://steamcommunity.com/market/listings/{$appId}/{$marketHashName}/render?currency=1";
         try {
             $response = $this->steamCommunity->cURL($url);
             $json = json_decode($response, true);
@@ -88,7 +88,7 @@ class Market
     public function getWalletBalance()
     {
         if ($this->steamCommunity->isLoggedIn()) {
-            $url = 'http://steamcommunity.com/market/';
+            $url = 'https://steamcommunity.com/market/';
             $response = $this->steamCommunity->cURL($url);
 
             $pattern = '/<span id=\"marketWalletBalanceAmount\">(.*)<\/span>/i';

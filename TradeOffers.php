@@ -14,7 +14,7 @@ use waylaidwanderer\SteamCommunity\TradeOffers\TradeOffer;
 
 class TradeOffers
 {
-    const BASE_URL = 'http://steamcommunity.com/my/tradeoffers/';
+    const BASE_URL = 'https://steamcommunity.com/my/tradeoffers/';
 
     private $steamCommunity;
 
